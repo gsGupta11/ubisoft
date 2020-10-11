@@ -1,0 +1,24 @@
+{
+  "name": "ubisoft",
+  "version": "1.0.0",
+  "description": "An Application for storing and displaying user's registration in FIFO manner.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsGupta11/ubisoft.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsGupta11/ubisoft/issues"
+  },
+  "homepage": "https://github.com/gsGupta11/ubisoft#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
