@@ -10,20 +10,19 @@
 
 <body>
     <div>
-        <form id="uploadForm" enctype="multipart/form-data" action="/gs/api/txtfile" method="post">
+        <form id="uploadForm" enctype="multipart/form-data" action="/postreg" method="post">
             <h2 id="reghead">Register Here: </h2>
             <label for="title">Title: </label>
             <input type="text" id="title" name="title" placeholder="Enter Title..">
 
-            <label for="des">Last Name: </label>
+            <label for="des">Description: </label>
             <input type="text" id="des" name="des" placeholder="Enter Description..">
 
             <label for="img">Image: </label>
             <input type="file" name="img"/>
             <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
         </form>
     </div>
-
 </body>
-
 </html>

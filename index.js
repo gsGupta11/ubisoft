@@ -1,9 +1,12 @@
+require('dotenv').config()
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const errorHandler = require('./middleware/errorHandler');
 const mainroutes = require('./routes/mainroutes');
+const makeConnection = require('./db');
+
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -14,6 +17,8 @@ app.use((req, res, next) => {
     return next();
 });
 
+
+makeConnection();
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine','ejs');
 app.use(express.static('public'));
