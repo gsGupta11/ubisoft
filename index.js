@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
-const errorHandler = require('./middleware/errorHandler')
-
+const ejs = require('ejs');
+const errorHandler = require('./middleware/errorHandler');
+const mainroutes = require('./routes/mainroutes');
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -14,12 +15,13 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.urlencoded({extended:true}));
+app.set('view engine','ejs');
 app.use(express.static('public'));
 
 app.get("/test",(req,res,next)=>{
     res.send("Request Recieved");
 })
-
+app.use(mainroutes);
 
 app.use(errorHandler);
 
