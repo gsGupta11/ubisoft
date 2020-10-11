@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Homepage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/home.css">
+</head>
+<body>
+    <section class="sec container">
+        <% if(items.length === 0){ %>
+        <h2>No products available!</h2>
+        <% } %>
+
+        <% if(items.length != 0){ %>
+        <div class="row">
+            <% items.forEach(function(e){ %>
+            <div class="col-lg-4 col-md-6 try">
+                <div class="card">
+                    <div class="card-header">Title:
+                        <%= e.title %>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Description: <%=e.des%> </h5>
+                        <img src="data:Image/<%= e.img.contentType %>;base64,<%= e.img.data.toString('base64') %>">
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        <% } %>
+    </section>
+    <a href="/register" class="btn btn-primary" role="button" style="margin-left: auto;margin-right: auto;display: block;">Register</a>
+    <a href="#" class="btn btn-success" role="button" style="margin-left: auto;margin-right: auto;display: block;">Next</a>
+</body>
+
+</html>
